@@ -1,6 +1,6 @@
 import CarCard from "./CarCard";
 import peugeot107 from "@/assets/peugeot-107-front.jpg";
-import car2 from "@/assets/car-2.jpg";
+import car2 from "@/assets/car-2-front.jpg";
 import car3 from "@/assets/car-3.jpg";
 import car4 from "@/assets/car-4.jpg";
 
@@ -16,11 +16,11 @@ const cars = [
   },
   {
     id: 2,
-    name: "Range Rover Sport",
-    year: 2024,
-    price: "$95,000",
-    mileage: "1,200 mi",
-    transmission: "Automatic",
+    name: "Peugeot 207",
+    year: 2008,
+    price: "€4,200",
+    mileage: "145,000 km",
+    transmission: "Manual",
     image: car2,
   },
   {
