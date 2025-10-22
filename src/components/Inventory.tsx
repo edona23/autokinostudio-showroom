@@ -16,11 +16,11 @@ const cars = [
   },
   {
     id: 2,
-    name: "Peugeot 207",
-    year: 2008,
-    price: "€4,200",
-    mileage: "145,000 km",
-    transmission: "Manual",
+    name: "Mercedes-Benz C-Class",
+    year: 2015,
+    price: "€12,500",
+    mileage: "135,000 km",
+    transmission: "Automatic",
     image: car2,
   },
   {
