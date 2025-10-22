@@ -1,5 +1,5 @@
 import CarCard from "./CarCard";
-import car1 from "@/assets/car-1.jpg";
+import peugeot107 from "@/assets/peugeot-107-front.jpg";
 import car2 from "@/assets/car-2.jpg";
 import car3 from "@/assets/car-3.jpg";
 import car4 from "@/assets/car-4.jpg";
@@ -7,12 +7,12 @@ import car4 from "@/assets/car-4.jpg";
 const cars = [
   {
     id: 1,
-    name: "Ferrari F8 Tributo",
-    year: 2023,
-    price: "$285,000",
-    mileage: "2,500 mi",
-    transmission: "Automatic",
-    image: car1,
+    name: "Peugeot 107",
+    year: 2010,
+    price: "€3,500",
+    mileage: "120,000 km",
+    transmission: "Manual",
+    image: peugeot107,
   },
   {
     id: 2,
