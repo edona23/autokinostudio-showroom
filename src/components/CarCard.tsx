@@ -32,11 +32,11 @@ const CarCard = ({ name, year, price, mileage, transmission, image }: CarCardPro
         
         <div className="grid grid-cols-2 gap-4 mb-4">
           <div>
-            <p className="text-muted-foreground text-sm">Mileage</p>
+            <p className="text-muted-foreground text-sm">Kilometrazhi</p>
             <p className="text-foreground font-semibold">{mileage}</p>
           </div>
           <div>
-            <p className="text-muted-foreground text-sm">Transmission</p>
+            <p className="text-muted-foreground text-sm">Transmisioni</p>
             <p className="text-foreground font-semibold">{transmission}</p>
           </div>
         </div>
@@ -49,7 +49,7 @@ const CarCard = ({ name, year, price, mileage, transmission, image }: CarCardPro
       <CardFooter className="p-6 pt-0">
         <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground">
           <Eye className="mr-2 h-4 w-4" />
-          View Details
+          Shiko Detajet
         </Button>
       </CardFooter>
     </Card>

@@ -11,7 +11,7 @@ const cars = [
     year: 2010,
     price: "€3,500",
     mileage: "120,000 km",
-    transmission: "Manual",
+    transmission: "Manuale",
     image: peugeot107,
   },
   {
@@ -20,7 +20,7 @@ const cars = [
     year: 2015,
     price: "€12,500",
     mileage: "135,000 km",
-    transmission: "Automatic",
+    transmission: "Automatike",
     image: car2,
   },
   {
@@ -29,7 +29,7 @@ const cars = [
     year: 2023,
     price: "$115,000",
     mileage: "3,800 mi",
-    transmission: "Automatic",
+    transmission: "Automatike",
     image: car3,
   },
   {
@@ -49,10 +49,10 @@ const Inventory = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl font-bold text-foreground mb-4">
-            Featured Inventory
+            Inventari i Zgjedhur
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Explore our carefully curated selection of premium vehicles
+            Eksploro përzgjedhjen tonë të kujdesshme të automjeteve premium
           </p>
         </div>
         

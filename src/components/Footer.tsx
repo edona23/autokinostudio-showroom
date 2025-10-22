@@ -7,7 +7,7 @@ const Footer = () => {
             AUTO <span className="text-primary">KINOSTUDIO</span>
           </p>
           <p className="text-muted-foreground">
-            © 2024 Auto Kinostudio. All rights reserved.
+            © 2024 Auto Kinostudio. Të gjitha të drejtat e rezervuara.
           </p>
         </div>
       </div>
