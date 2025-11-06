@@ -8,7 +8,7 @@ const Contact = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl font-bold text-foreground mb-4">
-            Vizito Koncesionin Tonë
+            Vizito Showroom-in Tonë
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Eja të përjetosh ndryshimin e Auto Kinostudio personalisht
@@ -21,8 +21,8 @@ const Contact = () => {
               <MapPin className="h-12 w-12 text-primary mx-auto mb-4" />
               <h3 className="text-lg font-semibold text-foreground mb-2">Lokacioni</h3>
               <p className="text-muted-foreground">
-                123 Luxury Drive<br />
-                Beverly Hills, CA 90210
+                Rr.Aleksander Moisiu 10<br />
+                Tirana, AL 1005
               </p>
             </CardContent>
           </Card>
@@ -61,9 +61,9 @@ const Contact = () => {
         </div>
         
         <div className="text-center">
-          <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground text-lg px-12">
-            Planifiko një Vizitë
-          </Button>
+         <a href="tel:355693196222"> <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground text-lg px-12">
+           Telefono
+          </Button></a>
         </div>
       </div>
     </section>
