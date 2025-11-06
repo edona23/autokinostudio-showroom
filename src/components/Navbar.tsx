@@ -23,10 +23,10 @@ const Navbar = () => {
             </a>
           </div>
 
-          <Button className="bg-primary hover:bg-primary/90 text-primary-foreground">
+           <a href="tel:355693196222"><Button className="bg-primary hover:bg-primary/90 text-primary-foreground">
             <Phone className="mr-2 h-4 w-4" />
             Telefono Tani
-          </Button>
+          </Button></a>
         </div>
       </div>
     </nav>
