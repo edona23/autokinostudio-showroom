@@ -13,13 +13,13 @@ const Navbar = () => {
           
           <div className="hidden md:flex items-center space-x-8">
             <Link to="/" className="text-foreground hover:text-primary transition-colors">
-              Ballina
+              Faqja e pare
             </Link>
             <a href="#inventory" className="text-foreground hover:text-primary transition-colors">
               Inventari
             </a>
             <a href="#contact" className="text-foreground hover:text-primary transition-colors">
-              Kontakti
+              Info
             </a>
           </div>
 
