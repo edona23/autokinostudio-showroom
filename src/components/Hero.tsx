@@ -22,13 +22,13 @@ const Hero = () => {
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-in fade-in slide-in-from-bottom-4 duration-1000 delay-300">
           <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground text-lg px-8" asChild>
             <a href="#inventory">
-              Shiko Inventarin
+              Shiko Makinat
               <ArrowRight className="ml-2 h-5 w-5" />
             </a>
           </Button>
           <Button size="lg" variant="outline" className="border-foreground text-foreground hover:bg-foreground/10 text-lg px-8">
             <MapPin className="mr-2 h-5 w-5" />
-            Vizito Koncesionin Tonë
+            Vizito Showroom-in Tonë
           </Button>
         </div>
       </div>
