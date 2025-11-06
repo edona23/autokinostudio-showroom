@@ -15,9 +15,6 @@ const Hero = () => {
       />
       
       <div className="container relative z-10 px-4 sm:px-6 lg:px-8 text-center">
-        <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-foreground mb-6 animate-in fade-in slide-in-from-bottom-4 duration-1000">
-          Zbuloni Makinën Tuaj të Ëndrrave
-        </h1>
         <p className="text-xl sm:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto animate-in fade-in slide-in-from-bottom-4 duration-1000 delay-150">
           Automjete premium, shërbim i jashtëzakonshëm dhe oferta të papërsëritshme në Auto Kinostudio
         </p>
