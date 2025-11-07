@@ -4,8 +4,6 @@ import car2 from "@/assets/car-2-front.jpg";
 import car3 from "@/assets/car-3.jpg";
 import car4 from "@/assets/car-4.jpg";
 import newCar from "@/assets/new-car-1.jpg";
-import car5 from "@/assest/Screenshot 2025-10-27";
-
 const cars = [
   {
     id: 1,
@@ -88,14 +86,7 @@ const cars = [
     transmission: "Automatike",
     image: newCar,
   },
-    id: 9,
-    name: "Makina e Re",
-    year: 2024,
-    price: "€25,000",
-    mileage: "15,000 km",
-    transmission: "Automatike",
-    image: Screenshot 2025-10-27,
-  },
+   
 ];
 
 const Inventory = () => {
