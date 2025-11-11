@@ -1,6 +1,12 @@
 import CarCard from "./CarCard";
-import peugeot107 from "@/assets/peugeot-107-front.jpg";
-import car2 from "@/assets/car-2-front.jpg";
+import peugeot107Front from "@/assets/peugeot-107-front.jpg";
+import peugeot107Back from "@/assets/peugeot-107-back.jpg";
+import peugeot107Interior from "@/assets/peugeot-107-interior.jpg";
+import peugeot107Side from "@/assets/peugeot-107-side.jpg";
+import car2Front from "@/assets/car-2-front.jpg";
+import car2Back from "@/assets/car-2-back.jpg";
+import car2Interior from "@/assets/car-2-interior.jpg";
+import car2Side from "@/assets/car-2-side.jpg";
 import car3 from "@/assets/car-3.jpg";
 import car4 from "@/assets/car-4.jpg";
 import car5 from "@/assets/car-5.jpg";
@@ -20,7 +26,15 @@ import car55 from "@/assets/car-55.jpg";
 import car56 from "@/assets/car-56.jpg";
 import car57 from "@/assets/car-57.jpg";
 import car58 from "@/assets/car-58.jpg";
-import newCar from "@/assets/new-car-1.jpg";
+import newCar1 from "@/assets/new-car-1.jpg";
+import newCar2 from "@/assets/new-car-2.jpg";
+import newCar3 from "@/assets/new-car-3.jpg";
+import newCar4 from "@/assets/new-car-4.jpg";
+import newCar5 from "@/assets/new-car-5.jpg";
+import newCar6 from "@/assets/new-car-6.jpg";
+import newCar7 from "@/assets/new-car-7.jpg";
+import newCar8 from "@/assets/new-car-8.jpg";
+import newCar9 from "@/assets/new-car-9.jpg";
 const cars = [
   {
     id: 1,
@@ -29,7 +43,7 @@ const cars = [
     price: "€3,500",
     mileage: "120,000 km",
     transmission: "Manuale",
-    image: peugeot107,
+    images: [peugeot107Front, peugeot107Back, peugeot107Side, peugeot107Interior],
   },
   {
     id: 2,
@@ -38,7 +52,7 @@ const cars = [
     price: "€12,500",
     mileage: "135,000 km",
     transmission: "Automatike",
-    image: car2,
+    images: [car2Front, car2Back, car2Side, car2Interior],
   },
   {
     id: 3,
@@ -47,7 +61,7 @@ const cars = [
     price: "€115,000",
     mileage: "6,000 km",
     transmission: "Automatike",
-    image: car3,
+    images: [car3],
   },
   {
     id: 4,
@@ -56,7 +70,7 @@ const cars = [
     price: "€225,000",
     mileage: "3,000 km",
     transmission: "PDK",
-    image: car4,
+    images: [car4],
   },
   {
     id: 5,
@@ -65,7 +79,7 @@ const cars = [
     price: "€45,000",
     mileage: "65,000 km",
     transmission: "Automatike",
-    image: car5,
+    images: [car5],
   },
   {
     id: 6,
@@ -74,7 +88,7 @@ const cars = [
     price: "€28,000",
     mileage: "85,000 km",
     transmission: "Automatike",
-    image: car41,
+    images: [car41],
   },
   {
     id: 7,
@@ -83,7 +97,7 @@ const cars = [
     price: "€18,500",
     mileage: "95,000 km",
     transmission: "Manuale",
-    image: car42,
+    images: [car42],
   },
   {
     id: 8,
@@ -92,7 +106,7 @@ const cars = [
     price: "€42,000",
     mileage: "25,000 km",
     transmission: "Automatike",
-    image: car43,
+    images: [car43],
   },
   {
     id: 9,
@@ -101,7 +115,7 @@ const cars = [
     price: "€25,000",
     mileage: "15,000 km",
     transmission: "Automatike",
-    image: newCar,
+    images: [newCar1, newCar2, newCar3, newCar4, newCar5, newCar6, newCar7, newCar8, newCar9],
   },
   {
     id: 10,
@@ -110,7 +124,7 @@ const cars = [
     price: "€68,000",
     mileage: "45,000 km",
     transmission: "Automatike",
-    image: car44,
+    images: [car44],
   },
   {
     id: 11,
@@ -119,7 +133,7 @@ const cars = [
     price: "€38,000",
     mileage: "70,000 km",
     transmission: "Automatike",
-    image: car45,
+    images: [car45],
   },
   {
     id: 12,
@@ -128,7 +142,7 @@ const cars = [
     price: "€52,000",
     mileage: "80,000 km",
     transmission: "Automatike",
-    image: car46,
+    images: [car46],
   },
   {
     id: 13,
@@ -137,7 +151,7 @@ const cars = [
     price: "€65,000",
     mileage: "55,000 km",
     transmission: "Automatike",
-    image: car47,
+    images: [car47],
   },
   {
     id: 14,
@@ -146,7 +160,7 @@ const cars = [
     price: "€78,000",
     mileage: "40,000 km",
     transmission: "Automatike",
-    image: car48,
+    images: [car48],
   },
   {
     id: 15,
@@ -155,7 +169,7 @@ const cars = [
     price: "€48,000",
     mileage: "35,000 km",
     transmission: "Automatike",
-    image: car51,
+    images: [car51],
   },
   {
     id: 16,
@@ -164,7 +178,7 @@ const cars = [
     price: "€55,000",
     mileage: "60,000 km",
     transmission: "Automatike",
-    image: car52,
+    images: [car52],
   },
   {
     id: 17,
@@ -173,7 +187,7 @@ const cars = [
     price: "€62,000",
     mileage: "75,000 km",
     transmission: "Automatike",
-    image: car53,
+    images: [car53],
   },
   {
     id: 18,
@@ -182,7 +196,7 @@ const cars = [
     price: "€58,000",
     mileage: "42,000 km",
     transmission: "Automatike",
-    image: car54,
+    images: [car54],
   },
   {
     id: 19,
@@ -191,7 +205,7 @@ const cars = [
     price: "€44,000",
     mileage: "52,000 km",
     transmission: "Automatike",
-    image: car55,
+    images: [car55],
   },
   {
     id: 20,
@@ -200,7 +214,7 @@ const cars = [
     price: "€72,000",
     mileage: "38,000 km",
     transmission: "Automatike",
-    image: car56,
+    images: [car56],
   },
   {
     id: 21,
@@ -209,7 +223,7 @@ const cars = [
     price: "€65,000",
     mileage: "28,000 km",
     transmission: "Automatike",
-    image: car57,
+    images: [car57],
   },
   {
     id: 22,
@@ -218,7 +232,7 @@ const cars = [
     price: "€82,000",
     mileage: "32,000 km",
     transmission: "Automatike",
-    image: car58,
+    images: [car58],
   },
    
 ];

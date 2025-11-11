@@ -2,6 +2,13 @@ import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Eye } from "lucide-react";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 interface CarCardProps {
   id: number;
@@ -10,19 +17,29 @@ interface CarCardProps {
   price: string;
   mileage: string;
   transmission: string;
-  image: string;
+  images: string[];
 }
 
-const CarCard = ({ name, year, price, mileage, transmission, image }: CarCardProps) => {
+const CarCard = ({ name, year, price, mileage, transmission, images }: CarCardProps) => {
   return (
     <Card className="bg-card border-border overflow-hidden group hover:shadow-[0_20px_60px_-15px_hsl(24_95%_53%_/_0.3)] transition-all duration-500">
       <div className="relative h-64 overflow-hidden">
-        <img 
-          src={image} 
-          alt={name}
-          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-        />
-        <Badge className="absolute top-4 right-4 bg-primary text-primary-foreground">
+        <Carousel className="w-full h-full">
+          <CarouselContent>
+            {images.map((image, index) => (
+              <CarouselItem key={index}>
+                <img 
+                  src={image} 
+                  alt={`${name} - Image ${index + 1}`}
+                  className="w-full h-64 object-cover"
+                />
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselPrevious className="left-2" />
+          <CarouselNext className="right-2" />
+        </Carousel>
+        <Badge className="absolute top-4 right-4 bg-primary text-primary-foreground z-10">
           {year}
         </Badge>
       </div>
