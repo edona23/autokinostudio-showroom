@@ -35,6 +35,10 @@ import newCar6 from "@/assets/new-car-6.jpg";
 import newCar7 from "@/assets/new-car-7.jpg";
 import newCar8 from "@/assets/new-car-8.jpg";
 import newCar9 from "@/assets/new-car-9.jpg";
+import audiRS4Front from "@/assets/audi-rs4-front.jpg";
+import audiRS4Side from "@/assets/audi-rs4-side.jpg";
+import audiRS4Back from "@/assets/audi-rs4-back.jpg";
+import audiRS4Interior from "@/assets/audi-rs4-interior.jpg";
 const cars = [
   {
     id: 1,
@@ -233,6 +237,15 @@ const cars = [
     mileage: "32,000 km",
     transmission: "Automatike",
     images: [car58],
+  },
+  {
+    id: 23,
+    name: "Audi RS4 Avant",
+    year: 2020,
+    price: "€65,000",
+    mileage: "45,000 km",
+    transmission: "Automatike",
+    images: [audiRS4Front, audiRS4Side, audiRS4Back, audiRS4Interior],
   },
    
 ];
