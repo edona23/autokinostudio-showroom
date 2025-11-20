@@ -4,12 +4,12 @@ import heroImage from "@/assets/hero-background.jpg";
 
 const Hero = () => {
   return (
-    <section className="relative flex items-start justify-center overflow-hidden min-h-[80vh] sm:min-h-[60vh]">
-      <div className="w-full h-full min-h-[80vh] sm:min-h-[60vh]">
+    <section className="relative flex items-start justify-center overflow-hidden min-h-[40vh] sm:min-h-[60vh]">
+      <div className="hidden sm:block w-full h-full min-h-[60vh]">
         <img 
           src={heroImage} 
           alt="Auto Kinostudio Hero" 
-          className="w-full h-full object-cover sm:object-contain min-h-[80vh] sm:min-h-[60vh] object-top" 
+          className="w-full h-full object-contain min-h-[60vh] object-top" 
         />
       </div>
       
