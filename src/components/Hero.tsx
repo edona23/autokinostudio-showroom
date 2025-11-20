@@ -4,13 +4,13 @@ import heroImage from "@/assets/hero-background.jpg";
 
 const Hero = () => {
   return (
-    <section className="relative flex items-center justify-center overflow-hidden min-h-[70vh] sm:min-h-[50vh]">
+    <section className="relative flex items-start justify-center overflow-hidden min-h-[70vh] sm:min-h-[50vh]">
       <div 
         className="w-full h-full"
         style={{
           backgroundImage: `url(${heroImage})`,
           backgroundSize: '50%',
-          backgroundPosition: 'center',
+          backgroundPosition: 'top',
           backgroundRepeat: 'no-repeat',
           aspectRatio: 'auto',
         }}
