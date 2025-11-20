@@ -4,18 +4,13 @@ import heroImage from "@/assets/hero-background.jpg";
 
 const Hero = () => {
   return (
-    <section className="relative flex items-start justify-center overflow-hidden min-h-[70vh] sm:min-h-[50vh]">
-      <div 
-        className="w-full h-full"
-        style={{
-          backgroundImage: `url(${heroImage})`,
-          backgroundSize: '50%',
-          backgroundPosition: 'top',
-          backgroundRepeat: 'no-repeat',
-          aspectRatio: 'auto',
-        }}
-      >
-        <img src={heroImage} alt="Auto Kinostudio Hero" className="w-full h-full object-contain min-h-[70vh] sm:min-h-[50vh]" />
+    <section className="relative flex items-start justify-center overflow-hidden min-h-[80vh] sm:min-h-[60vh]">
+      <div className="w-full h-full min-h-[80vh] sm:min-h-[60vh]">
+        <img 
+          src={heroImage} 
+          alt="Auto Kinostudio Hero" 
+          className="w-full h-full object-cover sm:object-contain min-h-[80vh] sm:min-h-[60vh] object-top" 
+        />
       </div>
       
       <div className="absolute inset-0 flex items-end justify-center pb-12">
