@@ -9,7 +9,7 @@ const Hero = () => {
         className="w-full h-full"
         style={{
           backgroundImage: `url(${heroImage})`,
-          backgroundSize: 'cover',
+          backgroundSize: '50%',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',
           aspectRatio: 'auto',
