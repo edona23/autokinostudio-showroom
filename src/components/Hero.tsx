@@ -4,9 +4,9 @@ import heroImage from "@/assets/hero-background.jpg";
 
 const Hero = () => {
   return (
-    <section className="relative flex items-center justify-center overflow-hidden">
+    <section className="relative flex items-center justify-center overflow-hidden min-h-[70vh] sm:min-h-[50vh]">
       <div 
-        className="w-full"
+        className="w-full h-full"
         style={{
           backgroundImage: `url(${heroImage})`,
           backgroundSize: 'contain',
@@ -15,7 +15,7 @@ const Hero = () => {
           aspectRatio: 'auto',
         }}
       >
-        <img src={heroImage} alt="Auto Kinostudio Hero" className="w-full h-auto" />
+        <img src={heroImage} alt="Auto Kinostudio Hero" className="w-full h-full object-contain min-h-[70vh] sm:min-h-[50vh]" />
       </div>
       
       <div className="absolute inset-0 flex items-end justify-center pb-12">
