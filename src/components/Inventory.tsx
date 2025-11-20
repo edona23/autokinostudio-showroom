@@ -1,4 +1,7 @@
+import { useState } from "react";
 import CarCard from "./CarCard";
+import { Button } from "@/components/ui/button";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import peugeot107Front from "@/assets/peugeot-107-front.jpg";
 import peugeot107Back from "@/assets/peugeot-107-back.jpg";
 import peugeot107Interior from "@/assets/peugeot-107-interior.jpg";
@@ -251,6 +254,22 @@ const cars = [
 ];
 
 const Inventory = () => {
+  const [currentPage, setCurrentPage] = useState(1);
+  const carsPerPage = 6;
+  
+  const totalPages = Math.ceil(cars.length / carsPerPage);
+  const startIndex = (currentPage - 1) * carsPerPage;
+  const endIndex = startIndex + carsPerPage;
+  const currentCars = cars.slice(startIndex, endIndex);
+  
+  const goToNextPage = () => {
+    setCurrentPage((prev) => Math.min(prev + 1, totalPages));
+  };
+  
+  const goToPreviousPage = () => {
+    setCurrentPage((prev) => Math.max(prev - 1, 1));
+  };
+  
   return (
     <section id="inventory" className="py-24 bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -263,12 +282,38 @@ const Inventory = () => {
           </p>
         </div>
         
-        <div className="max-h-[800px] overflow-y-auto pr-4 scrollbar-thin scrollbar-thumb-primary/20 scrollbar-track-transparent">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {cars.map((car) => (
-              <CarCard key={car.id} {...car} />
-            ))}
-          </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
+          {currentCars.map((car) => (
+            <CarCard key={car.id} {...car} />
+          ))}
+        </div>
+        
+        <div className="flex items-center justify-center gap-4 mt-12">
+          <Button
+            onClick={goToPreviousPage}
+            disabled={currentPage === 1}
+            variant="outline"
+            size="lg"
+            className="gap-2"
+          >
+            <ChevronLeft className="h-5 w-5" />
+            Mbrapa
+          </Button>
+          
+          <span className="text-foreground font-medium">
+            Faqja {currentPage} nga {totalPages}
+          </span>
+          
+          <Button
+            onClick={goToNextPage}
+            disabled={currentPage === totalPages}
+            variant="outline"
+            size="lg"
+            className="gap-2"
+          >
+            Përpara
+            <ChevronRight className="h-5 w-5" />
+          </Button>
         </div>
       </div>
     </section>
