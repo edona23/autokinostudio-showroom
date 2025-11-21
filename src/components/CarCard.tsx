@@ -14,13 +14,12 @@ interface CarCardProps {
   id: number;
   name: string;
   year: number;
-  price: string;
   mileage: string;
   transmission: string;
   images: string[];
 }
 
-const CarCard = ({ name, year, price, mileage, transmission, images }: CarCardProps) => {
+const CarCard = ({ name, year, mileage, transmission, images }: CarCardProps) => {
   return (
     <Card className="bg-card border-border overflow-hidden group hover:shadow-[0_20px_60px_-15px_hsl(24_95%_53%_/_0.3)] transition-all duration-500">
       <div className="relative h-64 overflow-hidden">
@@ -56,10 +55,6 @@ const CarCard = ({ name, year, price, mileage, transmission, images }: CarCardPr
             <p className="text-muted-foreground text-sm">Transmisioni</p>
             <p className="text-foreground font-semibold">{transmission}</p>
           </div>
-        </div>
-        
-        <div className="border-t border-border pt-4">
-          <p className="text-3xl font-bold text-primary">{price}</p>
         </div>
       </CardContent>
       
