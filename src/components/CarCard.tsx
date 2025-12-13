@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -28,7 +29,7 @@ interface CarCardProps {
   images: string[];
 }
 
-const CarCard = ({ name, year, mileage, transmission, images }: CarCardProps) => {
+const CarCard = ({ id, name, year, mileage, transmission, images }: CarCardProps) => {
   const [isOpen, setIsOpen] = useState(false);
   
   const phoneNumber = "355693196222";
@@ -40,29 +41,33 @@ const CarCard = ({ name, year, mileage, transmission, images }: CarCardProps) =>
 
   return (
     <Card className="bg-card border-border overflow-hidden group hover:shadow-[0_20px_60px_-15px_hsl(24_95%_53%_/_0.3)] transition-all duration-500">
-      <div className="relative h-64 overflow-hidden">
-        <Carousel className="w-full h-full">
-          <CarouselContent>
-            {images.map((image, index) => (
-              <CarouselItem key={index}>
-                <img 
-                  src={image} 
-                  alt={`${name} - Image ${index + 1}`}
-                  className="w-full h-64 object-cover"
-                />
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-          <CarouselPrevious className="left-2" />
-          <CarouselNext className="right-2" />
-        </Carousel>
-        <Badge className="absolute top-4 right-4 bg-primary text-primary-foreground z-10">
-          {year}
-        </Badge>
-      </div>
+      <Link to={`/car/${id}`} className="block">
+        <div className="relative h-64 overflow-hidden">
+          <Carousel className="w-full h-full">
+            <CarouselContent>
+              {images.map((image, index) => (
+                <CarouselItem key={index}>
+                  <img 
+                    src={image} 
+                    alt={`${name} - Image ${index + 1}`}
+                    className="w-full h-64 object-cover"
+                  />
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="left-2" onClick={(e) => e.preventDefault()} />
+            <CarouselNext className="right-2" onClick={(e) => e.preventDefault()} />
+          </Carousel>
+          <Badge className="absolute top-4 right-4 bg-primary text-primary-foreground z-10">
+            {year}
+          </Badge>
+        </div>
+      </Link>
       
       <CardContent className="p-6">
-        <h3 className="text-2xl font-bold text-foreground mb-4">{name}</h3>
+        <Link to={`/car/${id}`}>
+          <h3 className="text-2xl font-bold text-foreground mb-4 hover:text-primary transition-colors">{name}</h3>
+        </Link>
         
         <div className="grid grid-cols-2 gap-4 mb-4">
           <div>
@@ -77,6 +82,12 @@ const CarCard = ({ name, year, mileage, transmission, images }: CarCardProps) =>
       </CardContent>
       
       <CardFooter className="p-6 pt-0 flex flex-col gap-3">
+        <Link to={`/car/${id}`} className="w-full">
+          <Button variant="outline" className="w-full">
+            <Eye className="mr-2 h-4 w-4" />
+            Shiko Detajet
+          </Button>
+        </Link>
         <Dialog open={isOpen} onOpenChange={setIsOpen}>
           <DialogTrigger asChild>
             <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground">
