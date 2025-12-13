@@ -1,7 +1,8 @@
 import { useState, useMemo } from "react";
 import CarCard from "./CarCard";
 import { Button } from "@/components/ui/button";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { Input } from "@/components/ui/input";
+import { ChevronLeft, ChevronRight, Search } from "lucide-react";
 import {
   Select,
   SelectContent,
@@ -13,6 +14,7 @@ import { cars } from "@/data/cars";
 
 const Inventory = () => {
   const [currentPage, setCurrentPage] = useState(1);
+  const [searchQuery, setSearchQuery] = useState("");
   const [yearFilter, setYearFilter] = useState<string>("all");
   const [transmissionFilter, setTransmissionFilter] = useState<string>("all");
   const [mileageSort, setMileageSort] = useState<string>("none");
@@ -32,6 +34,13 @@ const Inventory = () => {
   // Filter and sort cars
   const filteredCars = useMemo(() => {
     let result = [...cars];
+    
+    // Filter by search query
+    if (searchQuery.trim()) {
+      result = result.filter(car => 
+        car.name.toLowerCase().includes(searchQuery.toLowerCase())
+      );
+    }
     
     // Filter by year
     if (yearFilter !== "all") {
@@ -53,7 +62,7 @@ const Inventory = () => {
     }
     
     return result;
-  }, [yearFilter, transmissionFilter, mileageSort]);
+  }, [searchQuery, yearFilter, transmissionFilter, mileageSort]);
   
   const totalPages = Math.ceil(filteredCars.length / carsPerPage);
   const startIndex = (currentPage - 1) * carsPerPage;
@@ -86,8 +95,23 @@ const Inventory = () => {
           </p>
         </div>
 
-        {/* Filters */}
-        <div className="flex flex-wrap gap-4 mb-8 justify-center">
+        {/* Search and Filters */}
+        <div className="flex flex-col gap-4 mb-8">
+          <div className="relative max-w-md mx-auto w-full">
+            <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+            <Input
+              type="text"
+              placeholder="Kërko makinën..."
+              value={searchQuery}
+              onChange={(e) => {
+                setSearchQuery(e.target.value);
+                setCurrentPage(1);
+              }}
+              className="pl-10 bg-background"
+            />
+          </div>
+        </div>
+          <div className="flex flex-wrap gap-4 justify-center">
           <Select value={yearFilter} onValueChange={handleFilterChange(setYearFilter)}>
             <SelectTrigger className="w-[160px] bg-background">
               <SelectValue placeholder="Viti" />
