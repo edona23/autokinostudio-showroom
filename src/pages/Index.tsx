@@ -3,6 +3,7 @@ import Hero from "@/components/Hero";
 import Inventory from "@/components/Inventory";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import WhatsAppButton from "@/components/WhatsAppButton";
 
 const Index = () => {
   return (
@@ -12,6 +13,7 @@ const Index = () => {
       <Inventory />
       <Contact />
       <Footer />
+      <WhatsAppButton />
     </div>
   );
 };
