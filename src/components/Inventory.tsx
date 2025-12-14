@@ -3,15 +3,8 @@ import CarCard from "./CarCard";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { ChevronLeft, ChevronRight, Search } from "lucide-react";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { cars } from "@/data/cars";
-
 const Inventory = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [searchQuery, setSearchQuery] = useState("");
@@ -35,31 +28,29 @@ const Inventory = () => {
   // Filter and sort cars
   const filteredCars = useMemo(() => {
     let result = [...cars];
-    
+
     // Filter by search query
     if (searchQuery.trim()) {
-      result = result.filter(car => 
-        car.name.toLowerCase().includes(searchQuery.toLowerCase())
-      );
+      result = result.filter(car => car.name.toLowerCase().includes(searchQuery.toLowerCase()));
     }
-    
+
     // Filter by year
     if (yearFilter !== "all") {
       result = result.filter(car => car.year === parseInt(yearFilter));
     }
-    
+
     // Filter by transmission
     if (transmissionFilter !== "all") {
       result = result.filter(car => car.transmission === transmissionFilter);
     }
-    
+
     // Filter by sold status
     if (soldFilter === "available") {
       result = result.filter(car => !car.sold);
     } else if (soldFilter === "sold") {
       result = result.filter(car => car.sold);
     }
-    
+
     // Sort by mileage
     if (mileageSort !== "none") {
       result.sort((a, b) => {
@@ -68,10 +59,8 @@ const Inventory = () => {
         return mileageSort === "asc" ? mileageA - mileageB : mileageB - mileageA;
       });
     }
-    
     return result;
   }, [searchQuery, yearFilter, transmissionFilter, mileageSort, soldFilter]);
-  
   const totalPages = Math.ceil(filteredCars.length / carsPerPage);
   const startIndex = (currentPage - 1) * carsPerPage;
   const endIndex = startIndex + carsPerPage;
@@ -82,17 +71,13 @@ const Inventory = () => {
     setter(value);
     setCurrentPage(1);
   };
-  
   const goToNextPage = () => {
-    setCurrentPage((prev) => Math.min(prev + 1, totalPages));
+    setCurrentPage(prev => Math.min(prev + 1, totalPages));
   };
-  
   const goToPreviousPage = () => {
-    setCurrentPage((prev) => Math.max(prev - 1, 1));
+    setCurrentPage(prev => Math.max(prev - 1, 1));
   };
-  
-  return (
-    <section id="inventory" className="py-24 bg-background">
+  return <section id="inventory" className="py-24 bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl font-bold text-foreground mb-4">
@@ -107,28 +92,20 @@ const Inventory = () => {
         <div className="flex flex-col gap-4 mb-8">
           <div className="relative max-w-md mx-auto w-full">
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-            <Input
-              type="text"
-              placeholder="Kërko makinën..."
-              value={searchQuery}
-              onChange={(e) => {
-                setSearchQuery(e.target.value);
-                setCurrentPage(1);
-              }}
-              className="pl-10 bg-background"
-            />
+            <Input type="text" placeholder="Kërko makinën..." value={searchQuery} onChange={e => {
+            setSearchQuery(e.target.value);
+            setCurrentPage(1);
+          }} className="pl-10 bg-background" />
           </div>
         </div>
-          <div className="flex flex-wrap gap-4 justify-center">
+          <div className="flex flex-wrap gap-4 justify-center my-[15px]">
           <Select value={yearFilter} onValueChange={handleFilterChange(setYearFilter)}>
             <SelectTrigger className="w-[160px] bg-background">
               <SelectValue placeholder="Viti" />
             </SelectTrigger>
             <SelectContent className="bg-background">
               <SelectItem value="all">Të gjitha vitet</SelectItem>
-              {years.map(year => (
-                <SelectItem key={year} value={year.toString()}>{year}</SelectItem>
-              ))}
+              {years.map(year => <SelectItem key={year} value={year.toString()}>{year}</SelectItem>)}
             </SelectContent>
           </Select>
 
@@ -138,9 +115,7 @@ const Inventory = () => {
             </SelectTrigger>
             <SelectContent className="bg-background">
               <SelectItem value="all">Të gjitha</SelectItem>
-              {transmissions.map(trans => (
-                <SelectItem key={trans} value={trans}>{trans}</SelectItem>
-              ))}
+              {transmissions.map(trans => <SelectItem key={trans} value={trans}>{trans}</SelectItem>)}
             </SelectContent>
           </Select>
 
@@ -167,26 +142,14 @@ const Inventory = () => {
           </Select>
         </div>
 
-        {filteredCars.length === 0 ? (
-          <div className="text-center py-12">
+        {filteredCars.length === 0 ? <div className="text-center py-12">
             <p className="text-muted-foreground text-lg">Nuk u gjetën makina me këto filtra.</p>
-          </div>
-        ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
-            {currentCars.map((car) => (
-              <CarCard key={car.id} {...car} />
-            ))}
-          </div>
-        )}
+          </div> : <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
+            {currentCars.map(car => <CarCard key={car.id} {...car} />)}
+          </div>}
         
         <div className="flex items-center justify-center gap-4 mt-12">
-          <Button
-            onClick={goToPreviousPage}
-            disabled={currentPage === 1}
-            variant="outline"
-            size="lg"
-            className="gap-2"
-          >
+          <Button onClick={goToPreviousPage} disabled={currentPage === 1} variant="outline" size="lg" className="gap-2">
             <ChevronLeft className="h-5 w-5" />
             Mbrapa
           </Button>
@@ -195,20 +158,12 @@ const Inventory = () => {
             Faqja {currentPage} nga {totalPages}
           </span>
           
-          <Button
-            onClick={goToNextPage}
-            disabled={currentPage === totalPages}
-            variant="outline"
-            size="lg"
-            className="gap-2"
-          >
+          <Button onClick={goToNextPage} disabled={currentPage === totalPages} variant="outline" size="lg" className="gap-2">
             Përpara
             <ChevronRight className="h-5 w-5" />
           </Button>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Inventory;
