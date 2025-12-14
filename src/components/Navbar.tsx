@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Phone, Menu, X } from "lucide-react";
+import ThemeToggle from "./ThemeToggle";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -30,7 +31,8 @@ const Navbar = () => {
             </a>
           </div>
 
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-2">
+            <ThemeToggle />
             <a href="tel:355693196222" className="hidden sm:block">
               <Button className="bg-primary hover:bg-primary/90 text-primary-foreground">
                 <Phone className="mr-2 h-4 w-4" />
