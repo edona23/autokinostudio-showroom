@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { Skeleton } from "@/components/ui/skeleton";
 import { Eye, MessageCircle, Phone } from "lucide-react";
 import {
   Carousel,
@@ -30,6 +31,24 @@ interface CarCardProps {
   sold?: boolean;
 }
 
+const CarImage = ({ src, alt }: { src: string; alt: string }) => {
+  const [isLoading, setIsLoading] = useState(true);
+
+  return (
+    <div className="relative w-full h-64">
+      {isLoading && (
+        <Skeleton className="absolute inset-0 w-full h-full" />
+      )}
+      <img 
+        src={src} 
+        alt={alt}
+        className={`w-full h-64 object-cover transition-opacity duration-300 ${isLoading ? 'opacity-0' : 'opacity-100'}`}
+        onLoad={() => setIsLoading(false)}
+      />
+    </div>
+  );
+};
+
 const CarCard = ({ id, name, year, mileage, transmission, images, sold }: CarCardProps) => {
   const [isOpen, setIsOpen] = useState(false);
   
@@ -48,11 +67,7 @@ const CarCard = ({ id, name, year, mileage, transmission, images, sold }: CarCar
             <CarouselContent>
               {images.map((image, index) => (
                 <CarouselItem key={index}>
-                  <img 
-                    src={image} 
-                    alt={`${name} - Image ${index + 1}`}
-                    className="w-full h-64 object-cover"
-                  />
+                  <CarImage src={image} alt={`${name} - Image ${index + 1}`} />
                 </CarouselItem>
               ))}
             </CarouselContent>
