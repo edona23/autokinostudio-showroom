@@ -21,9 +21,11 @@ const Hero = () => {
               <ArrowRight className="ml-2 h-5 w-5" />
             </a>
           </Button>
-          <Button size="lg" variant="outline" className="border-foreground text-foreground hover:bg-foreground/10 text-lg px-8">
-            <MapPin className="mr-2 h-5 w-5" />
-            Vizito Showroom-in Tonë
+          <Button size="lg" variant="outline" className="border-foreground text-foreground hover:bg-foreground/10 text-lg px-8" asChild>
+            <a href="https://share.google/adaLl98Hq8zwWu6G9" target="_blank" rel="noopener noreferrer">
+              <MapPin className="mr-2 h-5 w-5" />
+              Vizito Showroom-in Tonë
+            </a>
           </Button>
         </div>
       </div>
