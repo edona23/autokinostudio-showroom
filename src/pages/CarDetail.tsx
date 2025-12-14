@@ -62,6 +62,13 @@ const CarDetail = () => {
               <Badge className="absolute top-4 right-4 bg-primary text-primary-foreground text-lg px-4 py-1">
                 {car.year}
               </Badge>
+              {car.sold && (
+                <div className="absolute inset-0 bg-background/60 flex items-center justify-center">
+                  <Badge className="bg-destructive text-destructive-foreground text-2xl px-6 py-3 rotate-[-15deg]">
+                    SHITUR
+                  </Badge>
+                </div>
+              )}
             </div>
 
             {/* Thumbnail Gallery */}

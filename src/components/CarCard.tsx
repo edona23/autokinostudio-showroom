@@ -27,9 +27,10 @@ interface CarCardProps {
   mileage: string;
   transmission: string;
   images: string[];
+  sold?: boolean;
 }
 
-const CarCard = ({ id, name, year, mileage, transmission, images }: CarCardProps) => {
+const CarCard = ({ id, name, year, mileage, transmission, images, sold }: CarCardProps) => {
   const [isOpen, setIsOpen] = useState(false);
   
   const phoneNumber = "355693196222";
@@ -61,6 +62,13 @@ const CarCard = ({ id, name, year, mileage, transmission, images }: CarCardProps
           <Badge className="absolute top-4 right-4 bg-primary text-primary-foreground z-10">
             {year}
           </Badge>
+          {sold && (
+            <div className="absolute inset-0 bg-background/60 flex items-center justify-center z-20">
+              <Badge className="bg-destructive text-destructive-foreground text-lg px-4 py-2 rotate-[-15deg]">
+                SHITUR
+              </Badge>
+            </div>
+          )}
         </div>
       </Link>
       
