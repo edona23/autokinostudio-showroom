@@ -47,6 +47,7 @@ export interface Car {
   transmission: string;
   motor?: number;
   images: string[];
+  sold?: boolean;
 }
 
 export const cars: Car[] = [
