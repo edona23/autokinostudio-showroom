@@ -18,6 +18,7 @@ const Inventory = () => {
   const [yearFilter, setYearFilter] = useState<string>("all");
   const [transmissionFilter, setTransmissionFilter] = useState<string>("all");
   const [mileageSort, setMileageSort] = useState<string>("none");
+  const [soldFilter, setSoldFilter] = useState<string>("available");
   const carsPerPage = 6;
 
   // Get unique years for filter options
@@ -52,6 +53,13 @@ const Inventory = () => {
       result = result.filter(car => car.transmission === transmissionFilter);
     }
     
+    // Filter by sold status
+    if (soldFilter === "available") {
+      result = result.filter(car => !car.sold);
+    } else if (soldFilter === "sold") {
+      result = result.filter(car => car.sold);
+    }
+    
     // Sort by mileage
     if (mileageSort !== "none") {
       result.sort((a, b) => {
@@ -62,7 +70,7 @@ const Inventory = () => {
     }
     
     return result;
-  }, [searchQuery, yearFilter, transmissionFilter, mileageSort]);
+  }, [searchQuery, yearFilter, transmissionFilter, mileageSort, soldFilter]);
   
   const totalPages = Math.ceil(filteredCars.length / carsPerPage);
   const startIndex = (currentPage - 1) * carsPerPage;
@@ -133,6 +141,17 @@ const Inventory = () => {
               {transmissions.map(trans => (
                 <SelectItem key={trans} value={trans}>{trans}</SelectItem>
               ))}
+            </SelectContent>
+          </Select>
+
+          <Select value={soldFilter} onValueChange={handleFilterChange(setSoldFilter)}>
+            <SelectTrigger className="w-[160px] bg-background">
+              <SelectValue placeholder="Statusi" />
+            </SelectTrigger>
+            <SelectContent className="bg-background">
+              <SelectItem value="available">Në dispozicion</SelectItem>
+              <SelectItem value="sold">Të shitura</SelectItem>
+              <SelectItem value="all">Të gjitha</SelectItem>
             </SelectContent>
           </Select>
 
