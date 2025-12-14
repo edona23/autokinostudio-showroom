@@ -7,9 +7,16 @@ const Contact = () => {
     <section id="contact" className="py-24 bg-secondary">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl sm:text-5xl font-bold text-foreground mb-4">
-            Vizito Showroom-in Tonë
-          </h2>
+          <a 
+            href="https://share.google/adaLl98Hq8zwWu6G9" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="inline-block hover:text-primary transition-colors"
+          >
+            <h2 className="text-4xl sm:text-5xl font-bold text-foreground mb-4 hover:text-primary transition-colors">
+              Vizito Showroom-in Tonë
+            </h2>
+          </a>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Eja të përjetosh ndryshimin e Auto Kinostudio personalisht
           </p>
